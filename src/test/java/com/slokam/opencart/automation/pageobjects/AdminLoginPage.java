@@ -28,4 +28,6 @@ public class AdminLoginPage extends BasePage {
 	public void clickForgottenPasswordLink() {
 		forgottenEle.click();
 	}
+	
+	
 }
