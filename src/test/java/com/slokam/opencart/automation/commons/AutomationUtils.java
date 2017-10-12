@@ -9,7 +9,8 @@ import java.awt.event.KeyEvent;
 public class AutomationUtils {
 
 	public static  void uploadThroughRobot(String pathName) {
-
+		
+		//Simulate Keyboard Events
 		try {
 			Robot robot = new Robot();
 
