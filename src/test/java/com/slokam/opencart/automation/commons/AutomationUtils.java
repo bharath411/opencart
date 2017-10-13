@@ -14,7 +14,8 @@ import autoitx4java.AutoItX;
 public class AutomationUtils {
 
 	public static  void uploadThroughRobot(String pathName) {
-
+		
+		//Simulate Keyboard Events
 		try {
 			Robot robot = new Robot();
 
