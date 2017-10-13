@@ -49,7 +49,7 @@ public class TestProductPrice2 extends BaseTestCase{
 		
 		adminProductsPage.uploadImage();
 		AutomationUtils.sleep(5);
-		AutomationUtils.uploadThroughRobot("D:\\screenshot.jpg");
+		AutomationUtils.uploadThroughAutoIT("D:\\screenshot.jpg");
 		AutomationUtils.sleep(5);
 		adminProductsPage.handleAlert();
 	}

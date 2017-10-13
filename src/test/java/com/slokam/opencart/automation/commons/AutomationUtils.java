@@ -5,6 +5,11 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+
+import com.jacob.com.LibraryLoader;
+
+import autoitx4java.AutoItX;
 
 public class AutomationUtils {
 
@@ -41,6 +46,20 @@ public class AutomationUtils {
 		}
 	}
 	public static void main(String[] args) {
-		AutomationUtils.uploadThroughRobot("D:\\screenshot.jpg");
+		AutomationUtils.uploadThroughAutoIT("");
 	}
+	
+	
+	public static void uploadThroughAutoIT(String filePath) {
+		File file  = new File("./src/test/resources/jacob-1.14.3-x64.dll");
+		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+		AutoItX auto = new AutoItX();
+		String title = "Open";
+		auto.winActivate(title);
+		auto.controlSend(title, "", "[CLASS:Edit; INSTANCE:1]", filePath);
+		auto.controlClick(title, "", "[CLASS:Button; INSTANCE:1]");
+	}
+	
+	
+	
 }
