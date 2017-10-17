@@ -8,8 +8,6 @@ public class Sample2 {
 
 	@Test
 	public void test1() {
-		WebDriver driver  = new FirefoxDriver();
-		driver.get("http://www.google.com");
-		driver.quit();
+		System.out.println("test2");
 	}
 }

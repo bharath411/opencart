@@ -9,6 +9,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
 
 public class ExcelHandler {
 
@@ -26,25 +27,21 @@ public class ExcelHandler {
 			
 			HSSFRow row = sheet.getRow(2);
 			HSSFCell cell = row.getCell(1);
-			
-			String value = cell.getStringCellValue();
-			System.out.println(value);
+			System.out.println(getValue(cell));
+			cell = row.getCell(0);
+			System.out.println(getValue(cell));
 			
 			cell = row.getCell(2);
-			value = cell.getStringCellValue();
-			System.out.println(value);
-			
-			
+			System.out.println(getValue(cell));
 			
 			row = sheet.getRow(3);
 			
 			cell = row.getCell(1);
-			value = cell.getStringCellValue();
-			System.out.println(value);
+			System.out.println(getValue(cell));
 			
 			cell = row.getCell(2);
-			value = cell.getStringCellValue();
-			System.out.println(value);
+			System.out.println(getValue(cell));
+			
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -55,6 +52,39 @@ public class ExcelHandler {
 		}
 		
 	}
+	
+	public String getValue(HSSFCell cell) {
+		String value ="";
+		switch (cell.getCellTypeEnum()) {
+		case BLANK:
+			value="";
+			break;
+		case BOOLEAN:
+			boolean b = cell.getBooleanCellValue();
+			value = String.valueOf(b);
+			break;
+		case ERROR:
+			
+			break;
+		case FORMULA:
+			value = cell.getCellFormula();
+			break;
+		case NUMERIC:
+			int d= (int)cell.getNumericCellValue();
+			value = String.valueOf(d);
+			break;
+		case STRING:
+				value = cell.getStringCellValue();
+			break;
+		default:
+			value="";
+			break;
+		}
+		
+		return value;
+	}
+		
+		
 	public static void main(String[] args) {
 		new ExcelHandler().test1();
 	}

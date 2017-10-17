@@ -1,15 +1,15 @@
 package com.slokam.automation.testscripts;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
 
 public class Sample1 {
 
 	@Test
+	@Description("")
 	public void test1() {
-		WebDriver driver  = new FirefoxDriver();
-		driver.get("http://www.google.com");
-		driver.quit();
+		
+		System.out.println("test1");
 	}
 }
