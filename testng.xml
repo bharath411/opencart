@@ -3,7 +3,11 @@
 <suite name="SampleSuite" parallel="methods" thread-count="6">
 
 	<test name="Regression">
-
+		<groups>
+			<run>
+				<include name="regression"></include>
+			</run>
+		</groups>
 		<classes>
 			<class name="com.slokam.automation.testscripts.Sample1" />
 			<class name="com.slokam.automation.testscripts.Sample2" />
