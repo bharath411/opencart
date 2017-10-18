@@ -18,6 +18,7 @@ public class TestProductPrice2 extends BaseTestCase{
 		adminLoginPage.login("user","user123");
 		
 		DashboardPage dashboardPage = new DashboardPage();
+		//PageFactory.initElements(driver, dashboardPage);
 		dashboardPage.clickOnProducts();
 		
 		AdminProductsPage adminProductsPage = new AdminProductsPage();
@@ -28,7 +29,7 @@ public class TestProductPrice2 extends BaseTestCase{
 	}
 	
 	public void launchAdminApp() {
-		driver.get("https://localhost:448/opencart/admin/");
+		driver.get("http://localhost/opencart/admin/");
 	}
 	
 

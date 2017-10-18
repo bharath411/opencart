@@ -92,7 +92,7 @@ public class ExcelHandler {
 	}
 
 	public static void main(String[] args) {
-		new ExcelHandler().readXlsX();
+		new ExcelHandler().writeToExcelxlsx();
 	}
 
 	public void writeToExcel() {
@@ -175,5 +175,45 @@ public class ExcelHandler {
 
 	}
 
+	public void writeToExcelxlsx() {
+
+		XSSFWorkbook book = new XSSFWorkbook();
+		XSSFSheet sheet = book.createSheet("TestSheet");
+
+		XSSFRow row = sheet.createRow(1);
+		XSSFCell cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue("CREATED");
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue("SHEET");
+
+		// Row 2
+		row = sheet.createRow(2);
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue("SUDARSHAN");
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue("SUDARSHAN434");
+
+		// Row 3
+		row = sheet.createRow(3);
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue("SELENIUM");
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue("SELENIUM123");
+
+		File file = new File("D:\\sample_write.xls");
+		FileOutputStream fos = null;
+		try {
+			fos =  new FileOutputStream(file);
+			book.write(fos);
+			book.close();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

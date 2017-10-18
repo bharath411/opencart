@@ -2,6 +2,7 @@ package com.slokam.opencart.automation.testscripts;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,7 +23,7 @@ public class BaseTestCase {
 		String appUrl = "http://localhost:88/opencart";
 
 		if (browser.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:\\jars\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "E:\\jars\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "D:\\jars\\geckodriver.exe");
