@@ -13,7 +13,7 @@ public class TestRegistration extends BaseTestCase {
 	AppLoginPage appLoginPage = null;
 	RegisterPage registerPage =null;
 	
-	@Test
+	@Test(groups="regression")
 	public void verifyRegistrationFieldsPrivacyPolicyTest() {
 		String expectedErrorMessage = " Warning: You must agree to the Privacy Policy!";
 		homePage = new HomePage();
@@ -27,7 +27,7 @@ public class TestRegistration extends BaseTestCase {
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 	}
 	
-	@Test
+	@Test(groups="regression")
 	public void verifyRegistrationFieldsEmailTest() {
 		String expectedErrorMessage = "E-Mail Address does not appear to be valid!";
 		homePage = new HomePage();

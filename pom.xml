@@ -90,13 +90,27 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.1</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-testng-adaptor -->
+		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
-			<groupId>ru.yandex.qatools.allure</groupId>
-			<artifactId>allure-testng-adaptor</artifactId>
-			<version>1.5.4</version>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+
+
 
 	</dependencies>
 
@@ -117,21 +131,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.20.1</version>
 				<configuration>
-					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-					</argLine>
+
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjweaver</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
+
 			</plugin>
 
 		</plugins>

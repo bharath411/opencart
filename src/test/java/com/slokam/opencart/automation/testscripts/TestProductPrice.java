@@ -16,7 +16,7 @@ public class TestProductPrice extends BaseTestCase{
 
 	
 
-	@Test
+	@Test(groups="regression")
 	public void testProductPriceComaprision() {
 		
 		clickOnMac();

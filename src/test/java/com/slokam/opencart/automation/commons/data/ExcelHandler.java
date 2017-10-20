@@ -200,7 +200,7 @@ public class ExcelHandler {
 		cell = row.createCell(2, CellType.STRING);
 		cell.setCellValue("SELENIUM123");
 
-		File file = new File("D:\\sample_write.xls");
+		File file = new File("D:\\sample_write.xlsx");
 		FileOutputStream fos = null;
 		try {
 			fos =  new FileOutputStream(file);

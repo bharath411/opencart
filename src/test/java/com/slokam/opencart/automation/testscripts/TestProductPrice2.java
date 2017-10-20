@@ -11,7 +11,7 @@ import com.slokam.opencart.automation.pageobjects.DashboardPage;
 public class TestProductPrice2 extends BaseTestCase{
 
 	
-	@Test
+	@Test(groups="regression")
 	public void verifyProductPriceTest() {
 		launchAdminApp();
 		AdminLoginPage adminLoginPage = new AdminLoginPage();
