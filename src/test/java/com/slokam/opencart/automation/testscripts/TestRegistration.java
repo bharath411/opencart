@@ -1,5 +1,6 @@
 package com.slokam.opencart.automation.testscripts;
 
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,9 +19,9 @@ public class TestRegistration extends BaseTestCase {
 		String expectedErrorMessage = " Warning: You must agree to the Privacy Policy!";
 		homePage = new HomePage();
 		homePage.clickOnLoginButton();
-		
+		appLoginPage = PageFactory.initElements(driver, AppLoginPage.class);
 		appLoginPage.clickOnContinueButton();
-		
+		registerPage = PageFactory.initElements(driver, RegisterPage.class);
 		registerPage.register();
 		String actualErrorMessage = registerPage.getErrorMessage();
 		
@@ -32,7 +33,9 @@ public class TestRegistration extends BaseTestCase {
 		String expectedErrorMessage = "E-Mail Address does not appear to be valid!";
 		homePage = new HomePage();
 		homePage.clickOnLoginButton();
+		appLoginPage = PageFactory.initElements(driver, AppLoginPage.class);
 		appLoginPage.clickOnContinueButton();
+		registerPage = PageFactory.initElements(driver, RegisterPage.class);
 		registerPage.register();
 		String actualErrorMessage = registerPage.getErrorMessage();
 		

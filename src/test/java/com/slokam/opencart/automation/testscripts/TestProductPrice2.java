@@ -9,16 +9,16 @@ import com.slokam.opencart.automation.pageobjects.AdminProductsPage;
 import com.slokam.opencart.automation.pageobjects.DashboardPage;
 
 public class TestProductPrice2 extends BaseTestCase{
-
-	
 	@Test(groups="regression")
 	public void verifyProductPriceTest() {
+		
 		launchAdminApp();
 		AdminLoginPage adminLoginPage = new AdminLoginPage();
-		adminLoginPage.login("user","user123");
+		PageFactory.initElements(driver, adminLoginPage);
+		adminLoginPage.login(username,password);
 		
 		DashboardPage dashboardPage = new DashboardPage();
-		//PageFactory.initElements(driver, dashboardPage);
+		PageFactory.initElements(driver, dashboardPage);
 		dashboardPage.clickOnProducts();
 		
 		AdminProductsPage adminProductsPage = new AdminProductsPage();
@@ -28,9 +28,7 @@ public class TestProductPrice2 extends BaseTestCase{
 		System.out.println(price);
 	}
 	
-	public void launchAdminApp() {
-		driver.get("http://localhost/opencart/admin/");
-	}
+	
 	
 
 	@Test

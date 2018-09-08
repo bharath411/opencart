@@ -23,4 +23,12 @@ public class DashboardPage extends BasePage{
 		//Products.click();
 		driver.findElement(By.xpath("//a[contains(text(),'Products')]")).click();
 	}
+	
+	
+	public void clickOnCustomers() {
+		//catalog.click();
+		driver.findElement(By.xpath("//a[contains(text(),'Customers')]")).click();
+		//Products.click();
+		driver.findElement(By.xpath("//a[contains(text(),'Products')]")).click();
+	}
 }
